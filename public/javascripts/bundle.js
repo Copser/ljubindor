@@ -63,11 +63,17 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = react;
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91,7 +97,7 @@ function bytesToUuid(buf, offset) {
 module.exports = bytesToUuid;
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -130,10 +136,10 @@ if (!rng) {
 }
 
 module.exports = rng;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -145,23 +151,23 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _jquery = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _jquery = __webpack_require__(14);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _uuid = __webpack_require__(5);
+var _uuid = __webpack_require__(7);
 
 var _uuid2 = _interopRequireDefault(_uuid);
 
-var _MarketInput = __webpack_require__(9);
+var _MarketInput = __webpack_require__(11);
 
 var _MarketInput2 = _interopRequireDefault(_MarketInput);
 
-var _MarketValue = __webpack_require__(10);
+var _MarketValue = __webpack_require__(12);
 
 var _MarketValue2 = _interopRequireDefault(_MarketValue);
 
@@ -291,7 +297,7 @@ var App = function (_Component) {
 exports.default = App;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -350,10 +356,16 @@ function unregister() {
     });
   }
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 4 */
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = react-dom;
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -546,14 +558,14 @@ process.umask = function () {
 };
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var v1 = __webpack_require__(6);
-var v4 = __webpack_require__(7);
+var v1 = __webpack_require__(8);
+var v4 = __webpack_require__(9);
 
 var uuid = v4;
 uuid.v1 = v1;
@@ -562,7 +574,7 @@ uuid.v4 = v4;
 module.exports = uuid;
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -571,8 +583,8 @@ module.exports = uuid;
 // Unique ID creation requires a high quality random # generator.  We feature
 // detect to determine the best RNG source, normalizing to a function that
 // returns 128-bits of randomness, since that's what's usually required
-var rng = __webpack_require__(1);
-var bytesToUuid = __webpack_require__(0);
+var rng = __webpack_require__(2);
+var bytesToUuid = __webpack_require__(1);
 
 // **`v1()` - Generate time-based UUID**
 //
@@ -671,14 +683,14 @@ function v1(options, buf, offset) {
 module.exports = v1;
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var rng = __webpack_require__(1);
-var bytesToUuid = __webpack_require__(0);
+var rng = __webpack_require__(2);
+var bytesToUuid = __webpack_require__(1);
 
 function v4(options, buf, offset) {
   var i = buf && offset || 0;
@@ -708,7 +720,7 @@ function v4(options, buf, offset) {
 module.exports = v4;
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -738,7 +750,7 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -750,7 +762,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -799,7 +811,7 @@ var MarketInput = function (_Component) {
 exports.default = MarketInput;
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -811,7 +823,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -859,25 +871,25 @@ var MarketValue = function (_Component) {
 exports.default = MarketValue;
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _react = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-dom\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _reactDom = __webpack_require__(5);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(2);
+var _App = __webpack_require__(3);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _registerServiceWorker = __webpack_require__(3);
+var _registerServiceWorker = __webpack_require__(4);
 
 var _registerServiceWorker2 = _interopRequireDefault(_registerServiceWorker);
 
@@ -885,6 +897,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 (0, _registerServiceWorker2.default)();
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = jquery;
 
 /***/ })
 /******/ ]);

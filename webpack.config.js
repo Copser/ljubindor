@@ -10,8 +10,16 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        query: {
+          presets : [ "es2015", "react" ]
+        }
       }
     ]
+  },
+  externals : {
+    react: 'react',
+    'react-dom': 'react-dom',
+    jquery: 'jquery'
   }
 };
