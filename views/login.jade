@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= login
+  p Welcome to LOGIN
+
+
+  form(action="/auth/login", method="post")
+    h2 Please sign in
+    input(type="text", id="username", name="username", placeholder="Username")
+    input(type="password", id="password" name="password", placeholder="Password")
+    button(type="submit") Sign in

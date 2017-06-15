@@ -1,11 +1,11 @@
 const bcrypt = require('bcryptjs');
-const knex = require('../db/connection');
-const localAuth = require('/.local');
+const knex = require('../db/connections');
+const localAuth = require('./local');
 
-function createUse(req) {
+function createUser(req) {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
-  return kenx('user')
+  return knex('users')
   .insert({
     username: req.body.username,
     password: hash
@@ -26,18 +26,18 @@ function comparePass(userPassword, databasePassword) {
 function ensureAuthenticated(req, res, next) {
   if (!(req.headers && req.headers.authorization)) {
     return res.status(400).json({
-      status: 'Login'
+      status: 'Login here'
     });
   }
   var header = req.headers.authorization.split(' ');
-  vat token = header[1];
+  var token = header[1];
   localAuth.decodeToken(token, (err, payload) => {
     if (err) {
       return res.status(401).json({
         status: 'Token has expired'
       });
     } else {
-      return knex('users').where({id: parseInt(payload.sub)}).first();
+      return knex('users').where({id: parseInt(payload.sub)}).first()
       .then((user) => {
         next();
       })

@@ -6,6 +6,6 @@
     const authRoutes = require('../routes/auth');
 
     app.use('/', routes);
-    app.user('/auth', authRoutes);
+    app.use('/auth', authRoutes);
   };
 })(module.exports);

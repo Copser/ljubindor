@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const localAuth = require('../auth/local');
-const authHelpers = require('../auth/_helpers');
+const localAuth = require('../src/server/auth/local');
+const authHelpers = require('../src/server/auth/_helpers');
 
 router.post('/register', (req, res, next) => {
   return authHelpers.createUser(req)
@@ -21,8 +21,10 @@ router.post('/register', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
+
   const username = req.body.username;
   const password = req.body.password;
+    console.log('pobeda: ' + username + " " + password);
   return authHelpers.getUser(username)
   .then((response) => {
     authHelpers.comparePass(password, response.password);
