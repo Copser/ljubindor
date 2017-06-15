@@ -1,6 +1,5 @@
 const environment = process.env.NODE_ENV;
-const config = require('../../../knexfile')[environment];
-module.exports = require('knex')({
+const config = {
     client: 'postgresql',
     connection: {
       host : '127.0.0.1',
@@ -11,4 +10,5 @@ module.exports = require('knex')({
     migrations: {
       directory: __dirname + '/src/server/db/migrations'
     }
-  });
+  }
+module.exports = require('knex')(config);
