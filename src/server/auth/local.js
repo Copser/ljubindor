@@ -7,6 +7,8 @@ function encodeToken(user) {
     iat: moment().unix(),
     sub: user.id
   };
+
+  console.log("TOKEN_SECRET:", process.env.TOKEN_SECRET);
   return jwt.encode(playload, process.env.TOKEN_SECRET);
 }
 

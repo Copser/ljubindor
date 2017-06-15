@@ -3,9 +3,9 @@ const config = {
     client: 'postgresql',
     connection: {
       host : '127.0.0.1',
-      user : 'petar',
+      user : 'postgres',
       password : 'admin',
-      database : 'user_auth'
+      database : 'auth_user'
     },
     migrations: {
       directory: __dirname + '/src/server/db/migrations'

@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const knex = require('../db/connections');
+const knex =  require('../db/connections');
 const localAuth = require('./local');
 
 function createUser(req) {

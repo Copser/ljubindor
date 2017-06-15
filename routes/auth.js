@@ -14,36 +14,40 @@ router.post('/register', (req, res, next) => {
     });
   })
   .catch((err) => {
+    console.log("ERROR :: ", err);
     res.status(500).json({
-      status: 'error'
+      status: 'error',
+      error: err
     });
   });
 });
 
 router.post('/login', (req, res, next) => {
-
   const username = req.body.username;
   const password = req.body.password;
-    console.log('pobeda: ' + username + " " + password);
+  console.log('pobeda: ' + username + " " + password);
   return authHelpers.getUser(username)
-  .then((response) => {
-    authHelpers.comparePass(password, response.password);
-    return response;
-  })
-  .then((response) => {
-    return localAuth.encodeToken(response);
-  })
-  .then((token) => {
-    res.status(200).json({
-      status: 'success',
-      token: token
+    .then((response) => {
+      authHelpers.comparePass(password, response.password);
+      return response;
+    })
+    .then((response) => {
+      console.log("res 4 token: " , response)
+      return localAuth.encodeToken(response);
+    })
+    .then((token) => {
+      res.status(200).json({
+        status: 'success',
+        token: token
+      });
+    })
+    .catch((err) => {
+      console.log("ERROR :: ", err);
+      res.status(500).json({
+        status: 'error',
+        error: err
+      });
     });
-  })
-  .catch((err) => {
-    res.status(500).json({
-      status: 'error'
-    });
-  });
 });
 
 module.exports = router;

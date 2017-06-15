@@ -38,7 +38,7 @@ class App extends Component {
         $.ajax({
         // url: 'https://api.coinmarketcap.com/v1/ticker/safe-exchange-coun/',
         url: 'https://api.coinmarketcap.com/v1/ticker/safe-exchange-coin/',
-        dataType: 'text/plain',
+        dataType: 'json',
         cashe: false,
         success: function(data){
           this.setState({
